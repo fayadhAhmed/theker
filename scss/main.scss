@@ -1,0 +1,10 @@
+// colors
+$primary: #7DA1AA;
+$box-shadow:10px 0px 102px 51px rgba(125,161,170,0.36);
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+$font-family-sans-serif: "Tajawal", sans-serif;
+$font-weight-normal: 500;
+
+
+@import "../bootstrap/scss/bootstrap.scss";
