@@ -62,7 +62,6 @@ async function succesCallack (postition) {
     .then((data) => {
 
         data = data[0];
-        console.log(data);
 
         let datahijri = data.date.hijri.date;
         let Fajr = data.timings.Fajr.substr(0,5);
@@ -84,36 +83,27 @@ async function succesCallack (postition) {
 
         if ( checktime > checkFajr -1 && checktime < checkSunrise ) {
             FajrActive = true;
-            console.log("FajrActive");
         } else if ( checktime > checkSunrise -1 && checktime < checkDhuhr ) {
             SunriseActive = true;
-            console.log("SunriseActive");
 
         } else if ( checktime > checkDhuhr -1 && checktime < checkAsr ) {
             DhuhrActive = true;
-            console.log("DhuhrActive");
 
         
         } else if ( checktime > checkAsr -1 && checktime < checkMaghrib ) {
             AsrActive = true;
-            console.log("AsrActive");
 
 
         
         } else if ( checktime > checkMaghrib -1 && checktime < checkIsha ) {
             MaghribActive = true;
-            console.log("MaghribActive");
 
         } else if ( checktime > checkIsha -1 && checktime < 24 ) {
             IshaActive = true;
-            console.log("IshaActive");
 
 
         } 
-        console.log(
-            Math.floor(Fajr.substr(0,2)) > Math.floor(Fajr.substr(0,2))-1 && Math.floor(Fajr.substr(0,2)) < Math.floor(Sunrise.substr(0,2))
-            );
-
+        
         dateContainer.innerText = datahijri;
         createElemnt("الفجر", convertToAmPm(Fajr), FajrActive);
         createElemnt("شروق الشمس", convertToAmPm(Sunrise), SunriseActive);
